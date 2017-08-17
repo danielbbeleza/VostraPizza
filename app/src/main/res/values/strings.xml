@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">ProjectPizza</string>
+
+    <!-- String que aparece na activity OrderSummary -->
+    <string name="order_summary_ingredients">Ingredientes :</string>
+
+    <!-- String que aparece na activity OrderSummary -->
+    <string name="order_summary_pizza_number">Pizza </string>
+
+    <!-- Top custom menu title -->
+    <string name="custom_menu_title">My Menu</string>
+
+    <!-- Remove button in OrderSummary Activity -->
+    <string name="remove_text_view">-</string>
+
+    <!-- "Are you sure?" Alert Dialog na OrderSummary Activity -->
+    <string name="are_you_sure">Tem a certeza que deseja eliminar esta pizza?</string>
+
+
+    <string name="title_activity_main111">MainActivity111</string>
+
+    <!-- Comprar - OrderSummary Activity -->
+    <string name="total_text_view">Preço Final</string>
+
+    <!-- (Hint) Preço -->
+    <string name="hint_text_price">Preço</string>
+
+    <!-- (Massa da Pizza) Clássica -->
+    <string name="classic_dough_string">Clássica</string>
+
+    <!-- (Massa da Pizza) Clássica -->
+    <string name="wholemeal_dough_string">Integral</string>
+
+    <!-- (Massa da Pizza) Clássica -->
+    <string name="glutenfree_dough_string">sem Glúten</string>
+
+    <!-- Bottom Toolbar (Order Summary) PRICE -->
+    <string name="bottom_toolbar_price">Preço Final</string>
+
+    <!-- FAZER PAGAMENTO (Order Summary bottom toolbar) -->
+    <string name="payment">Fazer pagamento</string>
+
+    <!-- A sua receita -->
+    <string name="your_recipe_icon">CRIE A SUA PIZZA</string>
+
+    <!-- Os seus ingredientes -->
+    <string name="your_ingredients_icon">ESCOLHA DO MENU</string>
+
+    <!-- A sua receita -->
+    <string name="your_pizza_icon">OS SEUS PEDIDOS</string>
+
+    <!-- Horario de Funcionamento -->
+    <string name="business_time">Horário:</string>
+
+    <!-- Empty OrderSummary -->
+    <string name="empty_view_title_text">Sem pizzas adicionadas!</string>
+
+</resources>

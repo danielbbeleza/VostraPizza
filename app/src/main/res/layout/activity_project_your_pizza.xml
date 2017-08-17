@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_project_your_pizza"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.android.vostrapizza.ProjectYourPizza"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/pizza_dough_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:hint="Massa da Pizza"
+            android:textSize="20sp" />
+
+
+        <RadioGroup
+            android:id="@+id/pizza_dough"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal"
+            android:text="Clássica">
+
+            <RadioButton
+                android:id="@+id/pizza_dough_classic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:checked="true"
+                android:text="@string/classic_dough_string"
+                android:onClick="pizzaDough" />
+            <RadioButton
+                android:id="@+id/pizza_dough_wholemeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:text="@string/wholemeal_dough_string"
+                android:onClick="pizzaDough" />
+            <RadioButton
+                android:id="@+id/pizza_dough_glutenFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/glutenfree_dough_string"
+                android:onClick="pizzaDough" />
+
+        </RadioGroup>
+
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:id="@+id/grid_list_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="20sp"
+                android:text="Ingredientes"
+                android:id="@+id/ingredients_title_text_view"/>
+
+            <GridView
+                android:id="@+id/ingredients_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="3" android:layout_gravity="center"
+                android:paddingTop="60dp"
+                android:paddingBottom="70dp">
+            </GridView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="70dp"
+                android:layout_alignBottom="@id/ingredients_grid">
+
+                <Button
+                    android:layout_gravity="center"
+                    android:id="@+id/add_pizza_order_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Adicionar Pizza"
+                    android:textSize="16dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/rounded_button_design"/>
+
+                <!--
+            <Button
+                android:layout_marginLeft="100dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:id="@+id/next_button_order_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button_design"/>
+-->
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

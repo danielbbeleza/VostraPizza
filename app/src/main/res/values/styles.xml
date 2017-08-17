@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/salmon_primary_color</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/salmon_primary_color</item>
+    </style>
+
+    <style name="MenuTheme1">
+
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/category_main_menu</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="MenuTheme2">
+
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/category_main_menu</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Ingredients">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:text">Ingredientes</item>
+    </style>
+
+    <style name="ingredients_text_view_list">
+        <item name="android:textSize">8sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:height">28dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@color/ingredients_grid_list_color</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="main_activity_text_views">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D32F2F</color>
+    <color name="colorPrimaryDark">#C62828</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="category_main_menu">#64B5F6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="suggestions">#0D47A1</color>
+    <color name="suggestions_scroll">#BBDEFB</color>
+    <color name="ingredients_grid_list_color">#FFFFFF</color>
+    <color name="ingredients_text_grid_color">#E57373</color>
+    <color name="salmon_secondary_color">#FF8A80</color>
+    <color name="salmon_primary_color">#EF5350</color>
+    <color name="salmon_order_summary">#FCE4EC</color>
+    <color name="green_pastel_main_activity_background">#80CBC4</color>
+    <color name="green_suggestion_text">#009688</color>
+    <color name="green_group_is_selected">#00695C</color>
+    <color name="green_shadow_bottom">#004D40</color>
+    <color name="green_shadow_transparent_top">#00000000</color>
+    <color name="gray_dashed_line_separator">#E0E0E0</color>
+</resources>
