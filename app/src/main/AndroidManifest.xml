@@ -3,6 +3,7 @@
     package="com.example.android.vostrapizza">
 
     <application
+        android:name=".realm.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
@@ -15,37 +16,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ProjectYourPizza"
             android:label="Crie as suas Pizzas">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity"
-                />
+                android:value=".HomeActivity" />
         </activity>
-
         <activity android:name=".OrderSummary">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ProjectYourPizza"
-                />
+                android:value=".ProjectYourPizza" />
         </activity>
+        <activity android:name=".adapter.OrderSummaryAdapter" />
 
-        <activity android:name=".Adapters.OrderSummaryAdapter" />
-
-        <!--     <activity
+        <!--
+                 <activity
              android:name=".MainActivity111"
              android:label="@string/title_activity_main111"
              android:theme="@style/AppTheme.NoActionBar"></activity>
-         -->
+        -->
         <activity android:name=".PickFromMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity"
-                />
+                android:value=".HomeActivity" />
         </activity>
+        <activity android:name=".UserProfile" />
+        <activity android:name=".UserLoginRegisterMenu"></activity>
     </application>
 
 </manifest>

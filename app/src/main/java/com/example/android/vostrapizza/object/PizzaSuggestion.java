@@ -1,4 +1,4 @@
-package com.example.android.vostrapizza.Objects;
+package com.example.android.vostrapizza.object;
 
 import java.util.ArrayList;
 import java.util.List;

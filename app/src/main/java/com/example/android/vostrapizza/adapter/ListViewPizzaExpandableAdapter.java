@@ -1,4 +1,4 @@
-package com.example.android.vostrapizza.Adapters;
+package com.example.android.vostrapizza.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.android.vostrapizza.Objects.PizzaSuggestion;
+import com.example.android.vostrapizza.object.PizzaSuggestion;
 import com.example.android.vostrapizza.*;
 
 import android.widget.Toolbar;

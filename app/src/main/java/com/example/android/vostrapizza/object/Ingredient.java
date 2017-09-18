@@ -1,4 +1,4 @@
-package com.example.android.vostrapizza.Objects;
+package com.example.android.vostrapizza.object;
 
 /**
  * Created by danielbeleza on 14/08/17.

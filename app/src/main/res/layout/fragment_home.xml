@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.vostrapizza.HomeActivity"
+
+    android:orientation="vertical"
+    android:background="@color/green_pastel_main_activity_background">
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+    </android.support.v4.view.ViewPager>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:orientation="horizontal"
+            android:paddingTop="20dp"
+            >
+
+            <LinearLayout
+                android:id="@+id/create_pizza_linear_layout"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/group_view_background"
+                >
+
+                <ImageView
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/pizza_create"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pizzas"
+                    android:text="@string/your_recipe_icon"
+                    style="@style/main_activity_text_views" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shadow_between_icons"/>
+
+            <LinearLayout
+                android:id="@+id/pick_from_menu_linear_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/group_view_background">
+
+                <ImageView
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/menu"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pizzas"
+                    android:text="@string/your_ingredients_icon"
+                    style="@style/main_activity_text_views"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shadow_between_icons"/>
+
+            <LinearLayout
+                android:id="@+id/your_orders_linear_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/group_view_background"
+                >
+
+                <ImageView
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/pizza" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pizzas"
+                    style="@style/main_activity_text_views"
+                    android:text="@string/your_pizza_icon" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/white"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/salmon_order_summary">
+
+            <TextView
+                android:id="@+id/open_closed_text_view"
+                android:layout_weight="1"
+                android:gravity="start|center"
+                android:paddingLeft="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@string/business_time"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <View
+                android:layout_marginLeft="30dp"
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:background="@color/salmon_primary_color"/>
+
+            <TextView
+                android:layout_weight="3"
+                android:id="@+id/time_table"
+                android:paddingLeft="35dp"
+                android:paddingStart="35dp"
+                android:paddingTop="10dp"
+                android:gravity="start"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:hint="Faltam x horas para abrir" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

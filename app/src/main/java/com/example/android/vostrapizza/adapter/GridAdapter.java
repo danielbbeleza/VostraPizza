@@ -1,4 +1,4 @@
-package com.example.android.vostrapizza.Adapters;
+package com.example.android.vostrapizza.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.android.vostrapizza.Objects.Ingredient;
+import com.example.android.vostrapizza.object.Ingredient;
 import com.example.android.vostrapizza.R;
 
 import java.util.List;

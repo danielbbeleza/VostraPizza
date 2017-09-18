@@ -16,9 +16,9 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.vostrapizza.Adapters.GridAdapter;
-import com.example.android.vostrapizza.Objects.Ingredient;
-import com.example.android.vostrapizza.Objects.PizzaSuggestion;
+import com.example.android.vostrapizza.adapter.GridAdapter;
+import com.example.android.vostrapizza.object.Ingredient;
+import com.example.android.vostrapizza.object.PizzaSuggestion;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

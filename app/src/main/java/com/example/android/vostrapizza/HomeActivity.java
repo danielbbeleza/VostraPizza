@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,7 +20,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.android.vostrapizza.Objects.PizzaSuggestion;
+import com.example.android.vostrapizza.fragment.FragmentAbout;
+import com.example.android.vostrapizza.fragment.FragmentFavorites;
+import com.example.android.vostrapizza.fragment.FragmentOrderProgress;
+import com.example.android.vostrapizza.object.PizzaSuggestion;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -34,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
     String pizzaCount;
 
     MyAdapter mAdapter;
-
     ViewPager mPager;
 
     long longTimeDifference;
@@ -50,6 +55,14 @@ public class HomeActivity extends AppCompatActivity {
     Calendar closing1 = Calendar.getInstance();
     Calendar closing2 = Calendar.getInstance();
     Calendar timeDifference = Calendar.getInstance();
+
+
+    //Fragments
+    public DrawerLayout mDrawerLayout;
+    public Fragment fragment = null;
+    Class fragmentClass;
+    NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,20 +84,14 @@ public class HomeActivity extends AppCompatActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
 
+        // Conecta o objecto navigationView ao layout navigation_view
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        // Define o conteudo do navigationView
+        setupDrawerContent(navigationView);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        // Conecta o objeto DrawerLayout ao layout drawer_layout
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        // Entra na activity "ProjectYourPizza"
-        fab.setImageResource(R.drawable.pizza_fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-
-                Intent intent = new Intent(MainActivity111.this, ProjectYourPizza.class);
-                startActivity(intent);
-            }
-        });*/
 
         // Entra na Activity - ProjectYourPizza
         LinearLayout createYourPizza = (LinearLayout) findViewById(R.id.create_pizza_linear_layout);
@@ -245,7 +252,6 @@ public class HomeActivity extends AppCompatActivity {
 
         //SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
 
-
         //TODO: Corrigir diferença de tempo em que o restaurante está aberto e fechado.
         this.currentTime = Calendar.getInstance();
 
@@ -262,8 +268,6 @@ public class HomeActivity extends AppCompatActivity {
         closingLunch.set(Calendar.MINUTE, 0);
 
         Calendar closingDinner = Calendar.getInstance();
-        int lastDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        lastDay = lastDay -1;
         closingDinner.set(Calendar.HOUR_OF_DAY, 22);
         closingLunch.set(Calendar.MINUTE, 0);
 
@@ -284,12 +288,12 @@ public class HomeActivity extends AppCompatActivity {
 
             openClosedBoolean =true;
 
-            openOrClosed = "Fechamos dentro de " + getTimeDifference("19:00", "12:00", openClosedBoolean) + "h";
+            openOrClosed = "Fechamos dentro de " + getTimeDifference("12:00", "19:00", openClosedBoolean) + "h";
 
             return " Estamos abertos! :)";
 
             // Se estiver fechado das 22h-12h
-        } else if(currentTime.after(closingDinner) && currentTime.before(openingLunch)){
+        } else if(currentTime.before(openingLunch)){
             openClosedBoolean = false;
 
             openOrClosed = "Abrimos dentro de " + getTimeDifference("22:00", "12:00", openClosedBoolean) + "h";
@@ -304,12 +308,68 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    private void setupDrawerContent(NavigationView navigationView){
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                selectDrawerItem(item);
+                return true;
+            }
+        });
+    }
+
+    public void selectDrawerItem(MenuItem item){
+
+        switch(item.getItemId()){
+            case R.id.nav_definitions:
+                mDrawerLayout.closeDrawers();
+                Intent intent = new Intent(HomeActivity.this, UserProfile.class);
+                startActivity(intent);
+                //fragmentClass = FragmentDefinitions.class;
+                break;
+            case R.id.nav_favorites:
+                fragmentClass = FragmentFavorites.class;
+                break;
+            case R.id.nav_orders_progress:
+                fragmentClass = FragmentOrderProgress.class;
+                break;
+            case R.id.nav_about:
+                fragmentClass = FragmentAbout.class;
+                break;
+            default:
+                fragmentClass = HomeActivity.class;
+                break;
+        }
+
+//        try{
+//            fragment = (Fragment) fragmentClass.newInstance();
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
+//
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        fragmentManager.beginTransaction().replace(R.id.frame_layout_content, fragment).commit();
+//
+//        item.setChecked(true);
+//
+//        setTitle(item.getTitle());
+//
+//        mDrawerLayout.closeDrawers();
+    }
+
+
+
 
 
     public String getTimeDifference(String initTime, String finalTime, Boolean openOrClosed){
 
         // Current time
         Calendar time = Calendar.getInstance();
+        int minute = time.get(Calendar.MINUTE);
+        int hour = time.get(Calendar.HOUR);
+        int day = time.get(Calendar.DAY_OF_MONTH);
+        int month = time.get(Calendar.MONTH);
+        int year = time.get(Calendar.YEAR);
 
         long diff;
 

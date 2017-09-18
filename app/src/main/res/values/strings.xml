@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjectPizza</string>
+    <string name="app_name">VostraPizza</string>
 
     <!-- String que aparece na activity OrderSummary -->
     <string name="order_summary_ingredients">Ingredientes :</string>
@@ -54,5 +54,23 @@
 
     <!-- Empty OrderSummary -->
     <string name="empty_view_title_text">Sem pizzas adicionadas!</string>
+
+    <!--Variavel "NOME" do utilizador-->
+    <string name="user_profile_name">Nome</string>
+
+    <!--Variavel "MORADA" do utilizador-->
+    <string name="user_profile_address">Morada</string>
+
+    <!--Variavel "TELEFONE" do utilizador-->
+    <string name="user_profile_phone">Telefone</string>
+
+    <!--Variavel "EMAIL" do utilizador-->
+    <string name="user_profile_email">Email</string>
+
+    <!--Variavel "USERNAME" do utilizador-->
+    <string name="user_profile_username">Username</string>
+
+
+
 
 </resources>
