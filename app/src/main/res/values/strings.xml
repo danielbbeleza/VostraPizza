@@ -70,7 +70,8 @@
     <!--Variavel "USERNAME" do utilizador-->
     <string name="user_profile_username">Username</string>
 
-
+    <!--Variavel "PASSWORD" do utilizador-->
+    <string name="user_profile_password">Password</string>
 
 
 </resources>

@@ -9,24 +9,32 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".activity.LoginRegisterActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+        </activity>
+        <activity android:name=".activity.HomeActivity">
+            <!--<intent-filter>-->
+                <!--&lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
+            <!--</intent-filter>-->
         </activity>
         <activity
-            android:name=".ProjectYourPizza"
+            android:name=".activity.ProjectYourPizza"
             android:label="Crie as suas Pizzas">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
+                android:value=".activity.HomeActivity" />
         </activity>
-        <activity android:name=".OrderSummary">
+        <activity android:name=".activity.OrderSummary">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ProjectYourPizza" />
+                android:value=".activity.ProjectYourPizza" />
         </activity>
         <activity android:name=".adapter.OrderSummaryAdapter" />
 
@@ -36,13 +44,14 @@
              android:label="@string/title_activity_main111"
              android:theme="@style/AppTheme.NoActionBar"></activity>
         -->
-        <activity android:name=".PickFromMenu">
+        <activity android:name=".activity.PickFromMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeActivity" />
+                android:value=".activity.HomeActivity" />
         </activity>
-        <activity android:name=".UserProfile" />
-        <activity android:name=".UserLoginRegisterMenu"></activity>
+        <activity android:name=".activity.UserProfile" />
+        <activity android:name=".activity.UserLoginRegisterMenu" />
+
     </application>
 
 </manifest>

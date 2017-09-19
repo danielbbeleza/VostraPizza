@@ -1,7 +1,9 @@
-package com.example.android.vostrapizza;
+package com.example.android.vostrapizza.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.android.vostrapizza.R;
 
 public class UserLoginRegisterMenu extends AppCompatActivity {
 

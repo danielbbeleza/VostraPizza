@@ -1,4 +1,4 @@
-package com.example.android.vostrapizza;
+package com.example.android.vostrapizza.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
+import com.example.android.vostrapizza.R;
 import com.example.android.vostrapizza.adapter.OrderSummaryAdapter;
 import com.example.android.vostrapizza.object.PizzaSuggestion;
 import com.google.gson.Gson;

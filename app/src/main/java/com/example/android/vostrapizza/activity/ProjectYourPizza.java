@@ -1,4 +1,4 @@
-package com.example.android.vostrapizza;
+package com.example.android.vostrapizza.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +16,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.vostrapizza.R;
 import com.example.android.vostrapizza.adapter.GridAdapter;
 import com.example.android.vostrapizza.object.Ingredient;
 import com.example.android.vostrapizza.object.PizzaSuggestion;

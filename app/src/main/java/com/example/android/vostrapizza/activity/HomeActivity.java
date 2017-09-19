@@ -1,4 +1,4 @@
-package com.example.android.vostrapizza;
+package com.example.android.vostrapizza.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,9 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.android.vostrapizza.fragment.FragmentAbout;
-import com.example.android.vostrapizza.fragment.FragmentFavorites;
-import com.example.android.vostrapizza.fragment.FragmentOrderProgress;
+import com.example.android.vostrapizza.R;
 import com.example.android.vostrapizza.object.PizzaSuggestion;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -328,13 +326,13 @@ public class HomeActivity extends AppCompatActivity {
                 //fragmentClass = FragmentDefinitions.class;
                 break;
             case R.id.nav_favorites:
-                fragmentClass = FragmentFavorites.class;
+                //fragmentClass = FragmentFavorites.class;
                 break;
             case R.id.nav_orders_progress:
-                fragmentClass = FragmentOrderProgress.class;
+                //fragmentClass = FragmentOrderProgress.class;
                 break;
             case R.id.nav_about:
-                fragmentClass = FragmentAbout.class;
+                //fragmentClass = FragmentAbout.class;
                 break;
             default:
                 fragmentClass = HomeActivity.class;

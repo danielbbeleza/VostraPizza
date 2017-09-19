@@ -1,7 +1,9 @@
-package com.example.android.vostrapizza;
+package com.example.android.vostrapizza.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.example.android.vostrapizza.R;
 
 public class UserProfile extends AppCompatActivity {
 
