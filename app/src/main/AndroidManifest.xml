@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.vostrapizza">
 
+    <uses-permission android:name="android.Manifest.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="21"/>
+
     <application
         android:name=".realm.BaseApplication"
         android:allowBackup="true"
@@ -18,11 +21,7 @@
 
         </activity>
         <activity android:name=".activity.HomeActivity">
-            <!--<intent-filter>-->
-                <!--&lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt;-->
 
-                <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
-            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".activity.ProjectYourPizza"

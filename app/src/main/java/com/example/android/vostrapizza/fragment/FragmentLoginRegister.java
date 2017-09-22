@@ -57,6 +57,7 @@ public class FragmentLoginRegister extends Fragment{
         usernameET = (EditText) view.findViewById(R.id.login_username_edit_text);
         passwordET = (EditText) view.findViewById(R.id.login_password_edit_text);
 
+        // Login button is clicked
         loginButton = (Button) view.findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +83,7 @@ public class FragmentLoginRegister extends Fragment{
             }
         });
 
+        // Register Button is clicked
         registerButton = (Button) view.findViewById(R.id.register_button);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,9 +96,7 @@ public class FragmentLoginRegister extends Fragment{
             }
         });
 
-
         return view;
-
     }
 
 

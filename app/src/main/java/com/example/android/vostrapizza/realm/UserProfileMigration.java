@@ -30,5 +30,10 @@ public class UserProfileMigration implements RealmMigration {
                     .addField("mUsername", String.class);
         }
 
+        if(oldVersion == 2){
+            schema.get("User")
+                    .addField("mPhoto", String.class);
+        }
+
     }
 }

@@ -23,7 +23,7 @@ public class BaseApplication extends Application {
 
         RealmConfiguration config = new RealmConfiguration.Builder()
                 .name("userprofile.realm")
-                .schemaVersion(2)
+                .schemaVersion(3)
                 .migration(new UserProfileMigration())
                 .build();
 

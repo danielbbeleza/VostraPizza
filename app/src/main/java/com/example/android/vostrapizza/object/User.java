@@ -16,6 +16,15 @@ public class User extends RealmObject {
     private String        mEmail;
     private String        mPassword;
     private String        mUsername;
+    private String        mPhoto;
+
+    public String getmPhoto() {
+        return mPhoto;
+    }
+
+    public void setmPhoto(String mPhoto) {
+        this.mPhoto = mPhoto;
+    }
 
     public String getmPhone() {
         return mPhone;

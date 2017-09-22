@@ -100,10 +100,21 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/insert_photo_user_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="imagem de perfil"/>
+
     <Button
         android:id="@+id/create_new_user_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Criar perfil"/>
+    </LinearLayout>
 
 </LinearLayout>

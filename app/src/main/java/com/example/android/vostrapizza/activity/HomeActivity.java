@@ -3,6 +3,7 @@ package com.example.android.vostrapizza.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
@@ -21,7 +22,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.android.vostrapizza.R;
+import com.example.android.vostrapizza.fragment.FragmentLoginRegister;
 import com.example.android.vostrapizza.object.PizzaSuggestion;
+import com.example.android.vostrapizza.object.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -32,6 +35,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import io.realm.Realm;
+import io.realm.RealmResults;
+
 public class HomeActivity extends AppCompatActivity {
 
     Gson gson = new Gson();
@@ -40,12 +46,15 @@ public class HomeActivity extends AppCompatActivity {
     MyAdapter mAdapter;
     ViewPager mPager;
 
-    long longTimeDifference;
+    RealmResults<User> realmResults;
 
-    String stringTimeDifference;
     String openOrClosed = "Horário de Funcionamento: ";
 
     Boolean openClosedBoolean ;
+
+    Realm realm;
+
+    ImageView imageViewNavHeader;
 
     Calendar currentTime;
     Calendar opening1 = Calendar.getInstance();
@@ -61,11 +70,29 @@ public class HomeActivity extends AppCompatActivity {
     Class fragmentClass;
     NavigationView navigationView;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Recebe info da base de dados
+        realm = Realm.getDefaultInstance();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+        // Recebe info da base de dados
+        realm = Realm.getDefaultInstance();
+
+        realmResults = realm.where(User.class)
+                .findAll();
+
+        System.out.println(realmResults.toString());
+
+        setImageViewNavHeader(realm);
 
         // Aberto ou Fechado
         TextView tvOpenClosed = (TextView) findViewById(R.id.open_closed_text_view);
@@ -316,6 +343,8 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+
+
     public void selectDrawerItem(MenuItem item){
 
         switch(item.getItemId()){
@@ -338,21 +367,6 @@ public class HomeActivity extends AppCompatActivity {
                 fragmentClass = HomeActivity.class;
                 break;
         }
-
-//        try{
-//            fragment = (Fragment) fragmentClass.newInstance();
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        fragmentManager.beginTransaction().replace(R.id.frame_layout_content, fragment).commit();
-//
-//        item.setChecked(true);
-//
-//        setTitle(item.getTitle());
-//
-//        mDrawerLayout.closeDrawers();
     }
 
 
@@ -400,5 +414,31 @@ public class HomeActivity extends AppCompatActivity {
         long diffHours = diff / (60 * 60 * 1000);
 
         return String.valueOf(diffHours) + ":" + String.valueOf(diffMinutes);
+    }
+
+    public void setImageViewNavHeader(Realm realm){
+
+        getNavigationView();
+
+        realmResults = realm.where(User.class)
+                .equalTo("mUsername", FragmentLoginRegister.usernameLogin)
+                .equalTo("mPassword", FragmentLoginRegister.passwordLogin)
+                .findAll();
+
+        if(realmResults.get(0).getmPhoto() == null){
+            imageViewNavHeader.setImageResource(R.drawable.mushrooms);
+        } else if(realmResults.get(0).getmPhoto() != null) {
+            String imageUriString = realmResults.get(0).getmPhoto();
+            Uri imageUri = Uri.parse(imageUriString);
+            imageViewNavHeader.setImageURI(imageUri);
+        }
+    }
+
+    public void getNavigationView(){
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        View headerView = navigationView.inflateHeaderView(R.layout.nav_header);
+
+        // ImageView onde surge a imagem do utilizador
+        imageViewNavHeader = (ImageView) headerView.findViewById(R.id.nav_header_photo_image_view);
     }
 }

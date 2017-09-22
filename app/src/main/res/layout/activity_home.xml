@@ -32,7 +32,6 @@
 
 
     <include layout="@layout/content_home" />
-    <include layout="@layout/fragment_definitions"/>
 
     <android.support.design.widget.NavigationView
         app:headerLayout="@layout/nav_header"
