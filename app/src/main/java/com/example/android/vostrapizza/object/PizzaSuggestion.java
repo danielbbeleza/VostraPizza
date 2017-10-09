@@ -1,5 +1,8 @@
 package com.example.android.vostrapizza.object;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +10,7 @@ import java.util.List;
  * Created by danielbeleza on 14/08/17.
  */
 
-public class PizzaSuggestion {
+public class PizzaSuggestion implements Parcelable {
 
     private List<String> mIngredients = new ArrayList<String>();
     private String mSelectedDough;
@@ -152,4 +155,43 @@ public class PizzaSuggestion {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringList(this.mIngredients);
+        dest.writeString(this.mSelectedDough);
+        dest.writeInt(this.mPrice);
+        dest.writeString(this.mPizzaName);
+        dest.writeInt(this.mProducingTime);
+        dest.writeInt(this.mImageResourceId);
+        dest.writeInt(this.mQuantity);
+        dest.writeInt(this.mPizzaNumber);
+    }
+
+    protected PizzaSuggestion(Parcel in) {
+        this.mIngredients = in.createStringArrayList();
+        this.mSelectedDough = in.readString();
+        this.mPrice = in.readInt();
+        this.mPizzaName = in.readString();
+        this.mProducingTime = in.readInt();
+        this.mImageResourceId = in.readInt();
+        this.mQuantity = in.readInt();
+        this.mPizzaNumber = in.readInt();
+    }
+
+    public static final Parcelable.Creator<PizzaSuggestion> CREATOR = new Parcelable.Creator<PizzaSuggestion>() {
+        @Override
+        public PizzaSuggestion createFromParcel(Parcel source) {
+            return new PizzaSuggestion(source);
+        }
+
+        @Override
+        public PizzaSuggestion[] newArray(int size) {
+            return new PizzaSuggestion[size];
+        }
+    };
 }

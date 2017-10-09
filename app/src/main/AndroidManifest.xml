@@ -20,7 +20,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name=".features.home.HomeActivity">
 
         </activity>
         <activity
@@ -28,7 +28,7 @@
             android:label="Crie as suas Pizzas">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.HomeActivity" />
+                android:value=".features.home.HomeActivity" />
         </activity>
         <activity android:name=".activity.OrderSummary">
             <meta-data
@@ -46,7 +46,7 @@
         <activity android:name=".activity.PickFromMenu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.HomeActivity" />
+                android:value=".features.home.HomeActivity" />
         </activity>
         <activity android:name=".activity.UserProfile" />
         <activity android:name=".activity.UserLoginRegisterMenu" />

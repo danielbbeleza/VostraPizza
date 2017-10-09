@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.android.vostrapizza.R;
-import com.example.android.vostrapizza.activity.HomeActivity;
+import com.example.android.vostrapizza.features.home.HomeActivity;
 import com.example.android.vostrapizza.object.User;
 
 import io.realm.Realm;
